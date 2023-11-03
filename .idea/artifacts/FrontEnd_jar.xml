@@ -1,0 +1,12 @@
+<component name="ArtifactManager">
+  <artifact build-on-make="true" name="FrontEnd:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/FrontEnd_jar</output-path>
+    <root id="root">
+      <element id="archive" name="FrontEnd.jar">
+        <element id="module-output" name="FrontEnd" />
+      </element>
+      <element id="library" level="project" name="Protocol" />
+      <element id="library" level="project" name="BackEnd" />
+    </root>
+  </artifact>
+</component>
