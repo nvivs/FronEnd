@@ -139,7 +139,9 @@ public class Controller {
         Service.instance().imprimir(Collections.singletonList(TableModelCalibrations.rows), "Calibraciones.pdf");
     }
     public void refresh() throws Exception{
-        List<Calibrations> rows = Service.instance().refreshCalibracion();
+        Calibrations x = new Calibrations();
+        x.setInstrument(getCurrentInstrument());
+        List<Calibrations> rows = Service.instance().refreshCalibracion(x);
         model.setCalibrations(rows);
         model.setCurrent(new Calibrations());
         model.commit();
