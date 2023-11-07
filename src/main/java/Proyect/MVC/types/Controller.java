@@ -11,10 +11,9 @@
  */
 package Proyect.MVC.types;
 
-import InstrumentosProtocol.Instrument;
-import InstrumentosProtocol.InstrumentTypes;
 import BackEnd.logic.Service;
-
+import Protocol.Instrument;
+import Protocol.InstrumentTypes;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;

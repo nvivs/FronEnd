@@ -18,7 +18,7 @@ import java.awt.event.*;
 import java.io.File;
 import java.util.Observable;
 import java.util.Observer;
-import InstrumentosProtocol.InstrumentTypes;
+import Protocol.InstrumentTypes;
 
 public class View implements Observer {
     private JPanel panel;

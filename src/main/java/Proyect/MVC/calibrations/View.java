@@ -11,8 +11,8 @@
  */
 package Proyect.MVC.calibrations;
 
-import InstrumentosProtocol.Calibrations;
-import InstrumentosProtocol.Instrument;
+import Protocol.Calibrations;
+import Protocol.Instrument;
 import Proyect.Application;
 
 import javax.swing.*;

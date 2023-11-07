@@ -11,7 +11,7 @@
  */
 package Proyect.MVC.types;
 
-import InstrumentosProtocol.InstrumentTypes;
+import Protocol.InstrumentTypes;
 import java.util.List;
 import java.util.Observer;
 

@@ -13,9 +13,9 @@ package Proyect.MVC.calibrations;
 
 
 import BackEnd.logic.Service;
-import InstrumentosProtocol.Calibrations;
-import InstrumentosProtocol.Instrument;
-import InstrumentosProtocol.Measures;
+import Protocol.Calibrations;
+import Protocol.Instrument;
+import Protocol.Measures;
 import Proyect.Application;
 
 

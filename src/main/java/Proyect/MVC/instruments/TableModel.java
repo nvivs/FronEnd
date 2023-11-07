@@ -11,7 +11,7 @@
  */
 package Proyect.MVC.instruments;
 
-import InstrumentosProtocol.Instrument;
+import Protocol.Instrument;
 
 import javax.swing.table.AbstractTableModel;
 import java.util.List;

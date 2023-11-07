@@ -11,7 +11,7 @@
  */
 package Proyect.MVC.calibrations;
 
-import InstrumentosProtocol.Measures;
+import Protocol.Measures;
 import java.util.List;
 import javax.swing.table.AbstractTableModel;
 

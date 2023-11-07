@@ -10,7 +10,7 @@
  *  Fecha de entrega: 11/11/2023
  */
 package Proyect.MVC.calibrations;
-import InstrumentosProtocol.Calibrations;
+import Protocol.Calibrations;
 
 import javax.swing.table.AbstractTableModel;
 import java.util.List;

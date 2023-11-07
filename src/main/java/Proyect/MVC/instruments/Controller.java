@@ -10,9 +10,9 @@
  *  Fecha de entrega: 11/11/2023
  */
 package Proyect.MVC.instruments;
-import InstrumentosProtocol.Calibrations;
-import InstrumentosProtocol.InstrumentTypes;
-import InstrumentosProtocol.Instrument;
+import Protocol.Calibrations;
+import Protocol.InstrumentTypes;
+import Protocol.Instrument;
 
 
 import BackEnd.logic.Service;
