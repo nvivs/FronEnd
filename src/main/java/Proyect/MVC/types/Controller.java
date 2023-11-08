@@ -11,14 +11,14 @@
  */
 package Proyect.MVC.types;
 
-import BackEnd.logic.Service;
-import Protocol.Instrument;
 import Protocol.InstrumentTypes;
+import Protocol.Instrument;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.util.Collections;
 import java.util.List;
+import Proyect.logic.Service;
 
 public class Controller {
     View intrumentTypesView;

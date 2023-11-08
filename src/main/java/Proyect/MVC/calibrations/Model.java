@@ -11,7 +11,7 @@
  */
 package Proyect.MVC.calibrations;
 
-import BackEnd.logic.Service;
+import Proyect.logic.Service;
 import Protocol.Calibrations;
 import Protocol.Measures;
 import java.util.ArrayList;

@@ -13,10 +13,7 @@ package Proyect.MVC.instruments;
 import Protocol.Calibrations;
 import Protocol.InstrumentTypes;
 import Protocol.Instrument;
-
-
-import BackEnd.logic.Service;
-
+import Proyect.logic.Service;
 
 import javax.swing.*;
 import java.util.Collections;
