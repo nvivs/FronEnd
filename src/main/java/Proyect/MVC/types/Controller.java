@@ -13,23 +13,21 @@ package Proyect.MVC.types;
 
 import Protocol.InstrumentTypes;
 import Protocol.Instrument;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
-import java.awt.event.MouseListener;
+
 import java.util.Collections;
 import java.util.List;
 import Proyect.logic.Service;
 
 public class Controller {
-    View intrumentTypesView;
+    View view;
     Model model;
 
-    public Controller(View intrumentTypesView, Model model) throws Exception {
+    public Controller(View view, Model model) throws Exception {
         model.init(Service.instance().search(new InstrumentTypes()));
-        this.intrumentTypesView = intrumentTypesView;
+        this.view = view;
         this.model = model;
-        intrumentTypesView.setController(this);
-        intrumentTypesView.setModel(model);
+        view.setController(this);
+        view.setModel(model);
     }
 
     public void search(InstrumentTypes filter) throws Exception {

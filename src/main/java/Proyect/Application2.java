@@ -1,22 +1,8 @@
-/*
- *  Derek Rojas Mendoza
- *  604740973
- *  Nicole Vivas Montero
- *  402510851
- *  Universidad Nacional de Costa Rica
- *  Escuela de informatica
- *  EIF 206-01 - Programacion 3
- *  Proyecto 2
- *  Fecha de entrega: 11/11/2023
- */
 package Proyect;
 
 import javax.swing.*;
-import java.awt.event.WindowAdapter;
-import java.awt.event.WindowEvent;
-import java.util.Objects;
 
-public class Application {
+public class Application2 {
     public static void main(String[] args) throws Exception {
         try {
             UIManager.setLookAndFeel("javax.swing.plaf.nimbus.NimbusLookAndFeel");}

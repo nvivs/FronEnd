@@ -73,6 +73,7 @@ public class Model extends java.util.Observable{
     public Calibrations getCurrent() {
         return current;
     }
+
     public void setCurrent(Calibrations current) {
         changedProps += CURRENT;
         if(current.getMeasures() != null) setMeasures(current.getMeasures());
