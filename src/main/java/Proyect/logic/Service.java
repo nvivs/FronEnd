@@ -1,5 +1,6 @@
 package Proyect.logic;
 
+import BackEnd.data.PDFgenerator;
 import Protocol.*;
 
 import javax.swing.*;
@@ -253,6 +254,14 @@ public class Service implements IService, IListener{  // PROXY
     }
 
     @Override
+    public List<Instrument> getALLInstruments() throws Exception{
+        ss.out.writeInt(Protocol.INSTRUMENT_GET_ALL);
+        ss.out.flush();
+        if(ss.in.readInt()==Protocol.ERROR_NO_ERROR){return (List<Instrument>) ss.in.readObject(); }
+        else throw new Exception("INSTRUMENTO NO EXISTE");
+    }
+
+    @Override
     public void create(Calibrations calibrations) throws Exception {
         ss.out.writeInt(Protocol.CALIBRATIONS_CREATE);
         ss.out.writeObject(calibrations);
@@ -316,7 +325,7 @@ public class Service implements IService, IListener{  // PROXY
 
     @Override
     public void imprimir(List<Object> list, String s) throws Exception {
-           //??
+        PDFgenerator.generate(list, s);
     }
 
     @Override

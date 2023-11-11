@@ -105,7 +105,7 @@ public class Controller {
     }
 
     public void imprimir() throws Exception {
-        Service.instance().imprimir(Collections.singletonList(TableModel.rows), "Instrumentos.pdf");
+        Service.instance().imprimir(Collections.singletonList(Service.instance().getALLInstruments()), "Instrumentos.pdf");
     }
     public void refresh() throws Exception{
         List<Instrument> rows = Service.instance().refreshInstrument();

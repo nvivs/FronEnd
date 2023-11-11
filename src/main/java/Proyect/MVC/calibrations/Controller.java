@@ -127,13 +127,12 @@ public class Controller {
     }
 
     public void imprimir() throws Exception {
-        Service.instance().imprimir(Collections.singletonList(TableModelCalibrations.rows), "Calibraciones.pdf");
+        Service.instance().imprimir(Collections.singletonList(Service.instance().search(new Calibrations(0, getCurrentInstrument(), null, null, null))), "Calibraciones.pdf");
     }
 
     public void refresh() throws Exception{
         model.setMode(1);
-        Calibrations x = new Calibrations(0, getCurrentInstrument(), null, null, null);
-        List<Calibrations> rows = Service.instance().search(x);
+        List<Calibrations> rows = Service.instance().search(new Calibrations(0, getCurrentInstrument(), null, null, null));
         model.setCalibrations(rows);
         model.setCurrent(new Calibrations());
         model.commit();

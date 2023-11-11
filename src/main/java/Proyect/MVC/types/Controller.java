@@ -83,7 +83,7 @@ public class Controller {
     }
 
     public void imprimir() throws Exception {
-        Service.instance().imprimir(Collections.singletonList(TableModel.rows), "TiposDeInstrumentos.pdf");
+        Service.instance().imprimir(Collections.singletonList(Service.instance().search(new InstrumentTypes())), "TiposDeInstrumentos.pdf");
     }
 
     public InstrumentTypes searchName(String name) throws Exception {
