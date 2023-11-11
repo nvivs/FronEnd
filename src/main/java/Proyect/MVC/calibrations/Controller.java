@@ -127,7 +127,7 @@ public class Controller {
     }
 
     public void imprimir() throws Exception {
-        Service.instance().imprimir(Collections.singletonList(Service.instance().search(new Calibrations(0, getCurrentInstrument(), null, null, null))), "Calibraciones.pdf");
+        Service.instance().imprimir(Collections.singletonList(Service.instance().getAllCalibrations(new Calibrations(0, getCurrentInstrument(), null, null, null))), "Calibraciones.pdf");
     }
 
     public void refresh() throws Exception{

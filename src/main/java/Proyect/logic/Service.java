@@ -258,7 +258,7 @@ public class Service implements IService, IListener{  // PROXY
         ss.out.writeInt(Protocol.INSTRUMENT_GET_ALL);
         ss.out.flush();
         if(ss.in.readInt()==Protocol.ERROR_NO_ERROR){return (List<Instrument>) ss.in.readObject(); }
-        else throw new Exception("INSTRUMENTO NO EXISTE");
+        else throw new Exception("ERROR AL OBTENER LOS INSTRUMENTOS");
     }
 
     @Override
@@ -303,6 +303,15 @@ public class Service implements IService, IListener{  // PROXY
         ss.out.flush();
         if(ss.in.readInt()==Protocol.ERROR_NO_ERROR){ return ss.in.readInt();}
         else throw new Exception("ERROR AL OBTENER INDEX");
+    }
+
+    @Override
+    public List<Calibrations> getAllCalibrations(Calibrations e) throws Exception{
+        ss.out.writeInt(Protocol.CALIBRATIONS_GET_ALL);
+        ss.out.writeObject(e);
+        ss.out.flush();
+        if(ss.in.readInt()==Protocol.ERROR_NO_ERROR){return (List<Calibrations>) ss.in.readObject(); }
+        else throw new Exception("ERROR AL OBTENER LAS CALIBRACIONES");
     }
 
     @Override
