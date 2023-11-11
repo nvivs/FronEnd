@@ -12,7 +12,10 @@
 package Proyect.MVC.Message;
 
 import Protocol.Message;
+
+import javax.swing.*;
 import javax.swing.table.AbstractTableModel;
+import java.awt.*;
 import java.util.List;
 
 public class TableModel extends AbstractTableModel implements javax.swing.table.TableModel {
@@ -22,6 +25,7 @@ public class TableModel extends AbstractTableModel implements javax.swing.table.
     public TableModel(int col, List<Message> rows){
         this.col=col;
         this.rows=rows;
+        initColNames();
     }
 
     public int getColumnCount() {
@@ -30,6 +34,10 @@ public class TableModel extends AbstractTableModel implements javax.swing.table.
 
     public Class<?> getColumnClass(int col){
         return super.getColumnClass(col);
+    }
+
+    public String getColumnName(int col){
+        return colNames[col];
     }
 
     public int getRowCount() {
@@ -58,6 +66,12 @@ public class TableModel extends AbstractTableModel implements javax.swing.table.
 
     public Message getRowAt(int row) {
         return rows.get(row);
+    }
+
+    String[] colNames = new String[16];
+
+    private void initColNames(){
+        colNames[MESSAGE]= "Mensajes";
     }
 
     public static final int MESSAGE =0;

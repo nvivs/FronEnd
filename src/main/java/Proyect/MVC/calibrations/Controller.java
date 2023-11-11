@@ -67,16 +67,12 @@ public class Controller {
         }
     }
 
-    public void save(Calibrations x) throws Exception {
+    public void save(Calibrations x){
         x.setInstrument(getCurrentInstrument());
         x.setMeasures(createMeasures(x));
         try{
             Service.instance().create(x);
-            model.setMode(1);
-            x.setNumber(0);
-            model.setCalibrations(Service.instance().getList(x));
-            model.commit();
-            clear();
+            refresh();
         }catch (Exception ignored){
             System.out.println(-1);
         }
@@ -94,12 +90,7 @@ public class Controller {
     public void delete(){
         try {
             Service.instance().delete(model.getCurrent());
-            model.setMode(1);
-            Calibrations c = new Calibrations();
-            c.setInstrument(getCurrentInstrument());
-            model.setCalibrations(Service.instance().search(c));
-            model.commit();
-            clear();
+            refresh();
         } catch (Exception ignored) {
         }
     }
@@ -138,10 +129,11 @@ public class Controller {
     public void imprimir() throws Exception {
         Service.instance().imprimir(Collections.singletonList(TableModelCalibrations.rows), "Calibraciones.pdf");
     }
+
     public void refresh() throws Exception{
-        Calibrations x = new Calibrations();
-        x.setInstrument(getCurrentInstrument());
-        List<Calibrations> rows = Service.instance().refreshCalibracion(x);
+        model.setMode(1);
+        Calibrations x = new Calibrations(0, getCurrentInstrument(), null, null, null);
+        List<Calibrations> rows = Service.instance().search(x);
         model.setCalibrations(rows);
         model.setCurrent(new Calibrations());
         model.commit();

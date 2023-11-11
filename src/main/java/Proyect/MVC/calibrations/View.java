@@ -147,7 +147,6 @@ public class View implements Observer {
                 year.setToolTipText(null);
                 year.setText(String.valueOf(LocalDate.now().getYear()));
                 FechaLbl.setToolTipText(null);
-                
             }
         });
 

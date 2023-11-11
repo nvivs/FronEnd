@@ -12,9 +12,9 @@
 package Proyect.MVC.instruments;
 
 import Proyect.Application;
-
 import Protocol.Instrument;
 import Protocol.InstrumentTypes;
+
 import javax.swing.*;
 import javax.swing.table.TableColumnModel;
 import java.awt.*;

@@ -90,7 +90,6 @@ public class Service implements IService, IListener{  // PROXY
                         } catch (ClassNotFoundException ex) {}
                         break;
                 }
-                //ss.out.flush();
             } catch (IOException ex) {
                 continuar = false;
             }
@@ -186,7 +185,6 @@ public class Service implements IService, IListener{  // PROXY
     @Override
     public List<InstrumentTypes> refresh() throws Exception {
         ss.out.writeInt(Protocol.INSTRUMENT_TYPE_REFRESH);
-      //  os.out.writeObject();
         ss.out.flush();
         if(ss.in.readInt()==Protocol.ERROR_NO_ERROR){ return (List<InstrumentTypes>) ss.in.readObject();}
         else throw new Exception("ERROR AL ACTUALIZAR");
@@ -248,8 +246,10 @@ public class Service implements IService, IListener{  // PROXY
 
     @Override
     public List<Instrument> refreshInstrument() throws Exception {
-        //eliminar?
-        return null;
+        ss.out.writeInt(Protocol.INSTRUMENT_REFRESH);
+        ss.out.flush();
+        if(ss.in.readInt()==Protocol.ERROR_NO_ERROR){ return (List<Instrument>) ss.in.readObject();}
+        else throw new Exception("ERROR AL ACTUALIZAR");
     }
 
     @Override
@@ -290,32 +290,10 @@ public class Service implements IService, IListener{  // PROXY
 
     @Override
     public int getCalibrationIndex() throws Exception {
-        /*os.out.writeInt(Protocol.CALIBRATIONS_GET_CALIBRATION_INDEX);
-       // os.out.writeObject(instrument);
-        os.out.flush();
-        if(os.in.readInt()==Protocol.ERROR_NO_ERROR){ return }
+        ss.out.writeInt(Protocol.CALIBRATIONS_GET_CALIBRATION_INDEX);
+        ss.out.flush();
+        if(ss.in.readInt()==Protocol.ERROR_NO_ERROR){ return ss.in.readInt();}
         else throw new Exception("ERROR AL OBTENER INDEX");
-
-         */
-        return 0;
-    }
-
-    @Override
-    public List<Calibrations> getList(Calibrations calibrations) throws Exception {
-        ss.out.writeInt(Protocol.CALIBRATIONS_GET_LIST);
-        ss.out.writeObject(calibrations);
-        ss.out.flush();
-        if(ss.in.readInt()==Protocol.ERROR_NO_ERROR){return (List<Calibrations>) ss.in.readObject(); }
-        else throw new Exception("NO EXISTEN CALIBRACIONES");
-    }
-
-    @Override
-    public List<Calibrations> refreshCalibracion(Calibrations calibrations) throws Exception {
-        ss.out.writeInt(Protocol.CALIBRATIONS_REFRESH);
-        ss.out.writeObject(calibrations);
-        ss.out.flush();
-        if(ss.in.readInt()==Protocol.ERROR_NO_ERROR){return (List<Calibrations>) ss.in.readObject(); }
-        else throw new Exception("ERROR AL ACTUALIZAR");
     }
 
     @Override

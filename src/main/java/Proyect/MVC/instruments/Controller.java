@@ -84,7 +84,8 @@ public class Controller {
     public void delete() throws Exception{
         Calibrations c = new Calibrations();
         c.setInstrument(model.getCurrent());
-        for(Calibrations i : (Service.instance().getList(c))) {
+        c.setNumber(0);
+        for(Calibrations i : (Service.instance().search(c))) {
             if (i.getInstrument().equals(model.getCurrent())) {
                 throw new Exception("Error. El instrumento a borrar tiene calibraciones asociadas!");
             }

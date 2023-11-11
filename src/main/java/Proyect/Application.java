@@ -12,9 +12,6 @@
 package Proyect;
 
 import javax.swing.*;
-import java.awt.event.WindowAdapter;
-import java.awt.event.WindowEvent;
-import java.util.Objects;
 
 public class Application {
     public static void main(String[] args) throws Exception {
@@ -39,7 +36,7 @@ public class Application {
 
         window = new JFrame();
         JTabbedPane tabs = new JTabbedPane();
-        tabs.setBounds(10, 10, 750, 400);
+        tabs.setBounds(5, 5, 770, 450);
         tabs.setBorder(BorderFactory.createTitledBorder("Mantenimiento"));
         tabs.add("Tipos de Instrumento", types.getPanel());
         tabs.add("Instrumentos", instruments.getPanel());
@@ -47,12 +44,12 @@ public class Application {
 
         JPanel mensajes = messages.getPanel();
         mensajes.setBorder(BorderFactory.createTitledBorder("Mensajes"));
-        tabs.setBounds(5, 5, 900, 450);
+        mensajes.setBounds(780, 5, 300, 450);
 
         window.setLayout(null);
         window.add(tabs);
         window.add(mensajes);
-        window.setSize(910,500);
+        window.setSize(1085,500);
         window.setResizable(true);
         window.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         window.setTitle("SILAB: Sistema de Laboratorio Industrial");
